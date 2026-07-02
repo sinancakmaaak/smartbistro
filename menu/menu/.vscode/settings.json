@@ -1,0 +1,4 @@
+{
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "python.defaultInterpreterPath": "${workspaceFolder}/menu/menu/python-analytics/venv/Scripts/python.exe"
+}

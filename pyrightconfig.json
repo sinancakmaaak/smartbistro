@@ -1,0 +1,12 @@
+{
+  "venvPath": "menu/menu/python-analytics",
+  "venv": "venv",
+  "extraPaths": [
+    "menu/menu/python-analytics/venv/Lib/site-packages"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    ".venv"
+  ]
+}

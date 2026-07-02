@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #4f46e5;
+  --color-indigo-400: #818cf8;
+  --font-sans: "Outfit", "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #f8fafc;
+    color: #334155;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(243, 75%, 59%, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(199, 89%, 48%, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-xl border border-slate-200/60 rounded-2xl shadow-xl transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply relative overflow-hidden px-6 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl
+           transition-all duration-300 hover:bg-indigo-500 active:scale-95 flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/30;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-2.5 bg-white backdrop-blur-md text-slate-700 font-semibold rounded-xl
+           border border-slate-200 transition-all duration-300 hover:bg-slate-50 
+           hover:text-slate-900 active:scale-95 flex items-center justify-center gap-2 shadow-sm;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white/80 border border-slate-200 rounded-xl
+           focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500
+           transition-all duration-300 placeholder:text-slate-400 text-slate-700 shadow-sm;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all duration-300;
+  }
+
+  .sidebar-link-active {
+    @apply bg-indigo-50 text-indigo-600 border border-indigo-100 shadow-sm;
+  }
+
+  .sidebar-link-inactive {
+    @apply text-slate-500 hover:bg-slate-100 hover:text-slate-700;
+  }
+
+  .status-badge {
+    @apply px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border;
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
